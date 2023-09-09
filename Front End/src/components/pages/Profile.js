@@ -59,6 +59,7 @@ function ProfilePage() {
     addCompanyProfile(formData.companyName, formData.bio, formData.website, formData.fundingAmount, formData.equityOffered, formData.Location, formData.companyImage, formData.tags);
 
     
+    
   };
   
     return (

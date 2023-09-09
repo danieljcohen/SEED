@@ -33,9 +33,8 @@ function SignIn({ onFormSwitch }){
                 <label htmlFor="password">Password: </label>
                 <input value = {password} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name="password"></input>
                 <button type="submit">Sign In</button>
-                <p>email: {email}</p>
             </form>
-            <button onClick={switchToRegister}>Don't have an account? Register here</button>
+            <button onClick={switchToRegister}><u>Don't have an account? Register here</u></button>
         </div>
     );
 }

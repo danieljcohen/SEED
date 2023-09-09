@@ -5,6 +5,8 @@ import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebase
 import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 
+import { getDatabase, ref as dbRef, set, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+import {getStorage, ref as storageRef, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,22 +30,67 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase();
 
-export function addCompanyProfile(companyName, bio, website, fundingAmount, equityOffered, Location, companyImage, tags) {
+export async function addCompanyProfile(
+    companyName,
+    bio,
+    website,
+    fundingAmount,
+    equityOffered,
+    Location,
+    companyImage,
+    tags
+  ) {
     const db = getDatabase();
-    set(ref(db, 'companies/' + companyName), {
+    let url = "placeholder";
+  
+    try {
+      const reference = await addImgUrl(companyImage, companyName);
+      url = await getUrl(reference);
+  
+      const dbReference = dbRef(db, 'companies/' + companyName);
+      await set(dbReference, {
         bio: bio,
         website: website,
         fundingAmount: fundingAmount,
         equityOffered: equityOffered,
         Location: Location,
-        companyImage: companyImage,
+        Image: url,
         tags: tags
+<<<<<<< HEAD
     });
 }
 export function getCurrentUser() {
     return auth.currentUser;
   }
   
+=======
+      });
+  
+      console.log("Company profile added successfully");
+    } catch (error) {
+      console.error("Error adding company profile:", error);
+    }
+  }
+  
+  async function addImgUrl(file, companyName) {
+    const storage = getStorage();
+    const imageRef = storageRef(storage, `Images/${companyName}/${file.name}`);
+  
+    // Upload the image file to Firebase Storage
+    await uploadBytes(imageRef, file);
+    return imageRef;
+  }
+  
+  async function getUrl(ref) {
+    try {
+      const url = await getDownloadURL(ref);
+      return url;
+    } catch (error) {
+      console.error("Error getting download URL:", error);
+      throw error;
+    }
+  }
+>>>>>>> 110391995e9536b3b304ccc8fda00534e4f9790f
 
 export {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword};  // Add `auth` here
 
@@ -62,8 +109,11 @@ export function checkIfUserAuthenticated() {
     });
 }
 
-const email = ref(db, 'users/1/email');
-onValue(email, (snapshot) => {
-    const data = snapshot.val();
-    console.log(data);
+let dbData = null;
+const newCompany = dbRef(db, 'companies');
+onValue(newCompany, (snapshot) => {
+    const dbData = snapshot.val();
+    console.log(dbData);
+    
 });
+export default dbData;

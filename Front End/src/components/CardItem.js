@@ -9,12 +9,9 @@ export default function CardItem(props){
     logo: image of the logo
     bio: company bio
     equity: percent for price
-
-
-    TO DO:
-    ADD LOCATION, TAGS<
-    ADD A CHAR LIMIT FOR BIO
     */
+
+export default function Card(props){
     return(
         <div className="card_item_border">
             <h1 className="card_item_company_name">{props.companyName}</h1>
