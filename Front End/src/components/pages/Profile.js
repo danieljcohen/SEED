@@ -1,6 +1,8 @@
 import './Profile.css';
 import { Outlet, Link } from 'react-router-dom';
+import {addCompanyProfile} from "./firebase.js"
 import React, { useState } from 'react';
+
 
 
 function ProfilePage() {
@@ -43,18 +45,9 @@ function ProfilePage() {
       formDataToSend.append(key, formData[key]);
     });
 
-    fetch('/save_profile', {
-      method: 'POST',
-      body: formDataToSend
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Handle response from the backend (if needed)
-      console.log('Response from server:', data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+    addCompanyProfile(formData.companyName, formData.bio, formData.website, formData.fundingAmount, formData.equityOffered, formData.Location, formData.companyImage);
+
+    
   };
   
     return (
