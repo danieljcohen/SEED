@@ -14,10 +14,10 @@ function Cards(){
    //return <CardItem companyName = {data.companyName} />
    //})
     return (
-        <div className="cards">
+        <div className="main-container">
             <h1>Businesses</h1>
-            <div>
-                
+            <div classname="cards">
+                <CardItem companyName="Google" logo='./google.png' bio = "bla bla bla google bio goes here and this has to be longer so im typing" equity = "10% for 3 bucks" />
             </div>
         </div>
     )
