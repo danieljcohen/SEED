@@ -24,18 +24,19 @@ console.log("test");
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
-export function addCompanyProfile(companyName, bio, website, fundingAmount, equityOffered, companyImage) {
+export function addCompanyProfile(companyName, bio, website, fundingAmount, equityOffered, companyImage, tags) {
     const db = getDatabase();
     set(ref(db, 'companies/' + companyName), {
         bio: bio,
         website: website,
         fundingAmount: fundingAmount,
         equityOffered: equityOffered,
-        companyImage: companyImage
+        companyImage: companyImage,
+        tags: tags
     });
 }
 
-addCompanyProfile("Apple", "tech co", "website", "1000", "5%", "image")
+
 
 const email = ref(db, 'users/1/email');
 onValue(email, (snapshot) => {
