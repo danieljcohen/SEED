@@ -131,9 +131,9 @@ function NavBar() {
                             </li>
                         ) : (
                             <li className='login'>
-                            <div className={splitLocation[1] === "login" ? "nav-underline-current" : "nav-underline"}>
-                                <NavLink to='/login' className='nav-links' onClick={closeMobileMenu}>
-                                <p className='text'>Login / Signup</p>
+                            <div className="login">
+                                <NavLink to='/login' onClick={closeMobileMenu}>
+                                <p className='text'>LOGIN / SIGNUP</p>
                                 </NavLink>
                             </div>
                             </li>
