@@ -45,7 +45,7 @@ function NavBar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <NavLink to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        R1649
+                        Seed
                     </NavLink>
                     <div className='menu-icon' onClick={animation}>
                         <div className={!click ? 'bar1' : 'change-bar1'} />
@@ -62,8 +62,8 @@ function NavBar() {
                             </div>
                             <ul className='dropdown-content'>
                                 <li><a href="/about#who-we-are" className='dropdown-item'>WHO WE ARE</a></li>
-                                <li><a href="/about#how-we-invest" className='dropdown-item'>HOW WE INVEST</a></li>
-                                <li><a href="/about#our-history" className='dropdown-item'>OUR HISTORY</a></li>
+                                <li><a href="/about#how-we-invest" className='dropdown-item'>HOW SEED WORKS</a></li>
+                                <li><a href="/about#our-history" className='dropdown-item'>OUR FOUNDERS</a></li>
                             </ul>
                         </li>
                         <li className='nav-item'>
