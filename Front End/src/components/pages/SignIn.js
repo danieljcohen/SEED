@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { signInWithEmailAndPassword } from './firebase'; // Import the function to sign in
 
 function SignIn({ onFormSwitch }){
     const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
+    const [password, setPass] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        email = e;
-        /* Connect database here */
+
+        try {
+            await signInWithEmailAndPassword(email, password);
+            console.log('User signed in successfully');
+            // You can redirect or perform additional actions here after successful sign-in
+        } catch (error) {
+            console.error('Error signing in:', error.message);
+        }
     }
+
+
 
     const switchToRegister = () => {
         onFormSwitch('Register');
@@ -22,7 +31,7 @@ function SignIn({ onFormSwitch }){
                 <label htmlFor="email">Email: </label>
                 <input value = {email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email"></input>
                 <label htmlFor="password">Password: </label>
-                <input value = {pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name="password"></input>
+                <input value = {password} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name="password"></input>
                 <button type="submit">Sign In</button>
                 <p>email: {email}</p>
             </form>

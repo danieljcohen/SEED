@@ -1,14 +1,29 @@
 import React, { useState } from 'react';
+import { auth, createUserWithEmailAndPassword } from './firebase';
+
 
 function Register({ onFormSwitch }) {
     const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
+    const [password, setPass] = useState('');
     const [name, setName] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email);
+
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            await user.updateProfile({
+                displayName: name
+            });
+            console.log('User registered:', user);
+            // You can redirect or perform additional actions here after successful registration
+        } catch (error) {
+            console.error('Error registering:', error.message);
+        }
     }
+
+
 
     const switchToSignIn = () => {
         onFormSwitch('SignIn');
@@ -25,8 +40,8 @@ function Register({ onFormSwitch }) {
             <label htmlFor="email">email</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)}type="email" placeholder="youremail@gmail.com" id="email" name="email" />
             <label htmlFor="password">password</label>
-            <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-            <button type="submit">Log In</button>
+            <input value={password} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
+            <button type="submit">Create Account</button>
         </form>
         <p>Already have an account? <button onClick={switchToSignIn}>Sign In</button></p>
     </div>

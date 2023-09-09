@@ -2,6 +2,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,6 +25,7 @@ console.log("test");
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getDatabase();
 
 export function addCompanyProfile(companyName, bio, website, fundingAmount, equityOffered, Location, companyImage, tags) {
@@ -36,8 +40,27 @@ export function addCompanyProfile(companyName, bio, website, fundingAmount, equi
         tags: tags
     });
 }
+export function getCurrentUser() {
+    return auth.currentUser;
+  }
+  
 
+export {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword};  // Add `auth` here
 
+export function checkIfUserAuthenticated() {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            unsubscribe(); // Stop listening for changes after first response
+            if (user) {
+                resolve(user); // User is authenticated
+            } else {
+                resolve(null); // User is not authenticated
+            }
+        }, error => {
+            reject(error); // An error occurred while checking authentication
+        });
+    });
+}
 
 const email = ref(db, 'users/1/email');
 onValue(email, (snapshot) => {
