@@ -5,6 +5,8 @@ import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword } 
 
 import { getDatabase, ref as dbRef, set, child, get} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
 import {getStorage, ref as storageRef, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-storage.js";
+import {ref} from "firebase/database";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -83,23 +85,26 @@ export async function addCompanyProfile(
     }
   }
   
-export default function getSnapshot() {
-  console.log("snapshot function ran");
-    const db = getDatabase();
-    const root = dbRef(db);
-
-    get(child(root, 'companies')).then((snapshot) => {
-      if(snapshot.exists()) {
-        console.log(snapshot.val());
-        return snapshot.val();
+  export default async function getSnapshot() {
+    try {
+      const db = getDatabase();
+      const rootRef = ref(db, "companies");
+      const snapshot = await get(rootRef);
+  
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        const companiesArray = Object.values(data);
+        return companiesArray;
+      } else {
+        console.log("No data available");
+        return [];
       }
-      else {
-        console.log("no data")
-      }
-    }).catch((error) => {
-      console.log(error);
-    })
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return [];
+    }
   }
+  
   
 
 //export default dbData;

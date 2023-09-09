@@ -8,6 +8,7 @@ function Cards(){
     
     const [dataFromDB, setDataFromDB] = useState([]);
 
+   
     useEffect(() => {
         // Define an async function and call it immediately
         (async () => {
@@ -21,12 +22,10 @@ function Cards(){
       }, []);
   
 
-  let companies = null;
 
-  if (dataFromDB.length > 0) {
     // Map the fetched data to JSX elements when dataFromDB has data
     /* companyName, logo, location, bio, fundingAmount, equityOffered */
-    companies = dataFromDB.map((company) => (
+    const companies = dataFromDB.map((company) => (
       <CardItem
         companyName={company.companyName}
         logo={company.Image}
@@ -37,16 +36,15 @@ function Cards(){
       />
     ));
     console.log("companies: "+companies);
-  }
     return (
         <div className="main-container">
             <h1>Businesses</h1>
     
             <div classname="cards">
-                <CardItem companyName="Google" logo='./google.png' location ="ftl" bio = "bla bla bla google bio goes here and this has to be longer so im typing" fundingAmount = "3 bucks" equityOffered="10" />
+                {companies}
             </div>
         </div>
-    )
+    );
 }
 
 export default Cards
