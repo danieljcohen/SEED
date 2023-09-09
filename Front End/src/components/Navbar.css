@@ -1,6 +1,9 @@
 :root {
   --r1649Green: rgb(3, 73, 49);
 }
+.text{
+  color: White
+}
 
 .navbar {
     background: #fff;

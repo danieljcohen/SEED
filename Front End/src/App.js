@@ -9,6 +9,8 @@ import OurPeoplePage from './components/pages/OurPeoplePage';
 import Investments from './components/pages/Investments';
 import LogIn from './components/pages/LogIn';
 import Register from './components/pages/Register';
+import SignIn from './components/pages/SignIn';
+
 
 
 
@@ -32,6 +34,7 @@ function App() {
           <Route path='/investments' element = {<Investments/>} />
           <Route path='/LogIn' element = {<LogIn/>} />
           <Route path='/Register' element = {<Register/>} />
+          <Route path='/SignIn' element = {<SignIn/>} />
 
         </Routes>
       </div> 

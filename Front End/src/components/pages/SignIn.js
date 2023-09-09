@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function SignIn(){
+function SignIn({ onFormSwitch }){
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
@@ -10,6 +11,11 @@ function SignIn(){
         /* Connect database here */
     }
 
+    const switchToRegister = () => {
+        onFormSwitch('Register');
+    }
+
+
     return(
         <div>
             <form onSubmit={handleSubmit}>
@@ -18,11 +24,8 @@ function SignIn(){
                 <label htmlFor="password">Password: </label>
                 <input value = {pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name="password"></input>
                 <button type="submit">Sign In</button>
-                <p>email: {email}</p>
             </form>
-            <a href = "/Register.js">
-                <button>Don't have an account? Register here</button>
-            </a>
+            <button onClick={switchToRegister}><u>Don't have an account? Register here</u></button>
         </div>
     );
 }
