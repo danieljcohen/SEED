@@ -30,7 +30,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase();
 
-export async function addCompanyProfile(
+
+async function addCompanyProfile(
     companyName,
     bio,
     website,
@@ -56,31 +57,35 @@ export async function addCompanyProfile(
         Location: Location,
         Image: url,
         tags: tags
-    });
-}
-
-export function getCurrentUser() {
-    return auth.currentUser;
+      });
+  
+      console.log("Company profile added successfully");
+    } catch (error) {
+      console.error("Error adding company profile:", error);
+    }
   }
-
+  
+  async function addImgUrl(file, companyName) {
+    const storage = getStorage(firebaseApp);
+    const imageRef = storageRef(storage, `Images/${companyName}/${file.name}`);
+  
+    // Upload the image file to Firebase Storage
+    await uploadBytes(imageRef, file);
+    return imageRef;
+  }
+  
+  async function getUrl(ref) {
+    try {
+      const url = await getDownloadURL(ref);
+      return url;
+    } catch (error) {
+      console.error("Error getting download URL:", error);
+      throw error;
+    }
+  }
   
 
-export {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword};  // Add `auth` here
-
-export function checkIfUserAuthenticated() {
-    return new Promise((resolve, reject) => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            unsubscribe(); // Stop listening for changes after first response
-            if (user) {
-                resolve(user); // User is authenticated
-            } else {
-                resolve(null); // User is not authenticated
-            }
-        }, error => {
-            reject(error); // An error occurred while checking authentication
-        });
-    });
-}
+  
 
 let dbData = null;
 const newCompany = dbRef(db, 'companies');
@@ -90,3 +95,5 @@ onValue(newCompany, (snapshot) => {
     
 });
 export default dbData;
+
+
