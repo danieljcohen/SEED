@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link as NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import { getCurrentUser, checkIfUserAuthenticated, } from './pages/firebase';  // Import the function to get current user
 
 function NavBar() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
-    const [currentUser, setCurrentUser] = useState(null); // Track current user
 
     const animation = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -19,15 +17,6 @@ function NavBar() {
         }
     };
 
-    const handleSignOut = () => {
-        auth.signOut()
-            .then(() => {
-                // User signed out successfully
-            })
-            .catch(error => {
-                console.error('Error signing out:', error.message);
-            });
-    };
 
 
     
@@ -44,16 +33,6 @@ function NavBar() {
     
     useEffect(() => {
         showButton();
-        checkIfUserAuthenticated()
-        .then(user => {
-            if (user) {
-                setUser(user);
-            }
-            showButton();
-        })
-        .catch(error => {
-            console.error('Error checking authentication:', error);
-        });
         if (location.hash) {
             let elem = document.getElementById(location.hash.slice(1))
             if (elem) {
@@ -125,11 +104,6 @@ function NavBar() {
                                 </NavLink>
                             </div>
                         </li>
-                        {currentUser ? (
-                            <li className='login'>
-                            <p className='text'>Welcome, {currentUser.displayName}</p>
-                            </li>
-                        ) : (
                             <li className='login'>
                             <div className={splitLocation[1] === "login" ? "nav-underline-current" : "nav-underline"}>
                                 <NavLink to='/login' className='nav-links' onClick={closeMobileMenu}>
@@ -137,7 +111,7 @@ function NavBar() {
                                 </NavLink>
                             </div>
                             </li>
-                        )}
+
                     </ul>
                 </div>
             </nav>
