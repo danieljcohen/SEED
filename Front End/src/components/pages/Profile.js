@@ -57,6 +57,16 @@ function ProfilePage() {
     });
 
     addCompanyProfile(formData.companyName, formData.bio, formData.website, formData.fundingAmount, formData.equityOffered, formData.Location, formData.companyImage, formData.tags);
+    setFormData({
+      companyName: '',
+      bio: '',
+      website: '',
+      fundingAmount: '',
+      equityOffered: '',
+      Location: '',
+      companyImage: null,
+      tags: ''
+  });
 
     
     
@@ -64,7 +74,7 @@ function ProfilePage() {
   
     return (
       <div className='Wrapper'>
-        <h1 className='form-gap'>Profile</h1>
+        <h1 className='form-gap'>Create Listing</h1>
         <div className='forms'>
           <form onSubmit={handleSubmit}>
             <label htmlFor="companyName">Company Name: </label>
@@ -189,7 +199,7 @@ function ProfilePage() {
         </label><br /><br />
 
     
-            <input className = "submit-button" type="submit" value="Save" />
+            <input className = "submit-button" type="submit" value="Submit" />
           </form>
         </div>
       </div>
