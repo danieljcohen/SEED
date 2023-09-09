@@ -1,23 +1,26 @@
 import React from 'react' 
 import { Link } from 'react-router-dom'
+import "./CardItem.css"
 
-export default function Card(props){
+export default function CardItem(props){
+    /*
+    Variable names:
+    companyName: name of the company
+    logo: image of the logo
+    bio: company bio
+    equity: percent for price
+
+
+    TO DO:
+    ADD LOCATION, TAGS<
+    ADD A CHAR LIMIT FOR BIO
+    */
     return(
-        <>
-            <li className='cards__item'>
-                <Link className='cards__item__link' to={props.path}>
-                    <figure className='cards__item__pic-wrap' data-category={props.logo}>
-                        <img
-                        className='cards__item__img'
-                        alt='Logo Image'
-                        src={props.src}
-                        />
-                    </figure>
-                    <div className='cards__item__info'>
-                <h5 className='cards__item__text'>{props.bio}</h5>
-                </div>
-            </Link>
-            </li>
-            </>
+        <div className="card_item_border">
+            <h1 className="card_item_company_name">{props.companyName}</h1>
+            <img src={require('./google.png')} className="card_item_logo"></img>
+            <p className="card_item_bio">{props.bio}</p>
+            <h5 className="">Asking for {props.equity}</h5>
+        </div>
     )
 }
