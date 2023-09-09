@@ -6,10 +6,12 @@ import Cards from "../Cards.js"
 
 function Homepage() {
     return (
-        <div>
+        <div className="Homepage-container">
             <Cards />
-            <button>Previous Page</button>
-            <button>Next Page</button>
+            <div className="buttons">
+                <button>Previous Page</button>
+                <button>Next Page</button>
+            </div>
         </div>
     );
 }
