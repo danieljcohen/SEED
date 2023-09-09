@@ -24,13 +24,14 @@ console.log("test");
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
-export function addCompanyProfile(companyName, bio, website, fundingAmount, equityOffered, companyImage, tags) {
+export function addCompanyProfile(companyName, bio, website, fundingAmount, equityOffered, Location, companyImage, tags) {
     const db = getDatabase();
     set(ref(db, 'companies/' + companyName), {
         bio: bio,
         website: website,
         fundingAmount: fundingAmount,
         equityOffered: equityOffered,
+        Location: Location,
         companyImage: companyImage,
         tags: tags
     });
