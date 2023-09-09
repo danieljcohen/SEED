@@ -1,10 +1,11 @@
 import React from 'react'
 import CardItem from './CardItem'
+import './Cards.css'
 
 function Cards(){
     return (
         <div className="cards">
-            <h1>Company Name</h1>
+            <h1>Businesses</h1>
             <div className="cards_container">
                 <div className="cards_wrapper">
                     <ul className="cards_items">
