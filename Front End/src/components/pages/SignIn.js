@@ -9,13 +9,6 @@ function SignIn({ onFormSwitch }){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            await signInWithEmailAndPassword(email, password);
-            console.log('User signed in successfully');
-            // You can redirect or perform additional actions here after successful sign-in
-        } catch (error) {
-            console.error('Error signing in:', error.message);
-        }
     }
 
 

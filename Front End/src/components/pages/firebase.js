@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
 import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 
@@ -64,9 +63,10 @@ async function addCompanyProfile(
       console.error("Error adding company profile:", error);
     }
   }
+  export {addCompanyProfile}
   
   async function addImgUrl(file, companyName) {
-    const storage = getStorage(firebaseApp);
+    const storage = getStorage();
     const imageRef = storageRef(storage, `Images/${companyName}/${file.name}`);
   
     // Upload the image file to Firebase Storage

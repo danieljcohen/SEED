@@ -11,17 +11,7 @@ function Register({ onFormSwitch }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-            await user.updateProfile({
-                displayName: name
-            });
-            console.log('User registered:', user);
-            // You can redirect or perform additional actions here after successful registration
-        } catch (error) {
-            console.error('Error registering:', error.message);
-        }
+        
     }
 
 
@@ -56,7 +46,7 @@ function Register({ onFormSwitch }) {
                 />
                 <label htmlFor="password" className="form-label">Password: </label>
                 <input
-                    value={pass}
+                    value={password}
                     onChange={(e) => setPass(e.target.value)}
                     type="password"
                     placeholder="********"
