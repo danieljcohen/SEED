@@ -83,13 +83,18 @@ export async function addCompanyProfile(
     }
   }
   
-export async function getSnapshot() {
+export default function getSnapshot() {
+  console.log("snapshot function ran");
     const db = getDatabase();
     const root = dbRef(db);
 
-    get(child(root)).then((snapshot) => {
+    get(child(root, 'companies')).then((snapshot) => {
       if(snapshot.exists()) {
         console.log(snapshot.val());
+        return snapshot.val();
+      }
+      else {
+        console.log("no data")
       }
     }).catch((error) => {
       console.log(error);
