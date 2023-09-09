@@ -14,10 +14,12 @@ function Homepage() {
     }, []); // The empty dependency array ensures this effect runs only once
 
     return (
-        <div>
+        <div className="Homepage-container">
             <Cards />
-            <button>Previous Page</button>
-            <button>Next Page</button>
+            <div className="buttons">
+                <button>Previous Page</button>
+                <button>Next Page</button>
+            </div>
         </div>
     );
 }

@@ -31,14 +31,11 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Adjust the max-width as needed */
-    padding: 0 0px;
+    width: 100vw;
   }
   
   .navbar-logo {
     color: var(--r1649Green);
-    justify-self: start;
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
@@ -49,18 +46,18 @@ body{
   
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(7, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 60vw;
-    justify-content: end;
-    margin-right: 0;
+    width: 100vw;
+    justify-content: right;
   }
 
   .login{
     background-color: var(--r1649Green);
     color: #fff;
+    justify-content: center;
     padding: 4px 4px;
     border: .5px solid var(--r1649Green);
     transition: all 0.3s ease-out;

@@ -31,7 +31,6 @@ function App() {
       <NavBar />
       <div className='body'>
         <Routes>
-          
           <Route path='/' element = {<Homepage/>} />
           <Route path='/about' element = {<AboutPage />} />
           <Route path='/our-people' element = {<OurPeoplePage />} />

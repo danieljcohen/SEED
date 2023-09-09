@@ -12,13 +12,15 @@ export default function LogIn() {
 
    return (
        <div className="App">
-           <div className="form-container">
-               {currentForm === "SignIn" ? (
-                   <SignIn onFormSwitch={switchForm} />
-               ) : (
-                   <Register onFormSwitch={switchForm} />
-               )}
-           </div>
+            <div className="secondShadow">
+                <div className="form-container">
+                    {currentForm === "SignIn" ? (
+                        <SignIn onFormSwitch={switchForm} />
+                    ) : (
+                        <Register onFormSwitch={switchForm} />
+                    )}
+                </div>
+            </div>
        </div>
    )
 }

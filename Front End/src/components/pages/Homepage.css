@@ -1,12 +1,4 @@
-video{
-    z-index: -1;
-    object-fit: fill;
-    position: fixed;
-    left: 0;
-    height: 100vh;
-    overflow-y: hidden;
-    width: 100vw;
- }
+
  .Homepage-container{
     height: 100vh;
     overflow-y: hidden;
@@ -44,22 +36,8 @@ video{
     padding-top: 50%;
     padding-left: 10%;
     position: fixed;
-
  }
 
- .button {
-    background-color:rgb(255, 255, 255);
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    position: relative;
-
- }
  .button:hover{
     background-color:rgb(172, 175, 172);
  }
