@@ -56,7 +56,7 @@ function ProfilePage() {
       formDataToSend.append(key, formData[key]);
     });
 
-    addCompanyProfile(formData.companyName, formData.bio, formData.website, formData.fundingAmount, formData.equityOffered, formData.Location, formData.companyImage);
+    addCompanyProfile(formData.companyName, formData.bio, formData.website, formData.fundingAmount, formData.equityOffered, formData.Location, formData.companyImage, formData.tags);
 
     
   };
