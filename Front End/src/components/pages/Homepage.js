@@ -8,6 +8,8 @@ function Homepage() {
     return (
         <div>
             <Cards />
+            <button>Previous Page</button>
+            <button>Next Page</button>
         </div>
     );
 }
