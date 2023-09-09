@@ -11,7 +11,8 @@ function ProfilePage() {
     fundingAmount: '',
     equityOffered: '',
     Location: '',
-    companyImage: null // Added for company image
+    companyImage: null, // Added for company image
+    tags: []
   });
 
   const handleChange = (e) => {
@@ -33,6 +34,16 @@ function ProfilePage() {
     const file = e.target.files[0];
     setFormData({ ...formData, companyImage: file });
   };
+
+  const handleTagChange = (e) => {
+    const { value, checked } = e.target;
+    const updatedTags = checked
+      ? [...formData.tags, value]
+      : formData.tags.filter(tag => tag !== value);
+
+    setFormData({ ...formData, tags: updatedTags });
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -130,6 +141,59 @@ function ProfilePage() {
               onChange={handleImageChange}
               required
             /><br /><br />
+
+      <label>Company Tags:</label><br />
+        <label>
+          <input
+            type="checkbox"
+            name="tags"
+            value="tech"
+            checked={formData.tags.includes('tech')}
+            onChange={handleTagChange}
+          />
+           Tech
+        </label><br />
+        <label>
+          <input
+            type="checkbox"
+            name="tags"
+            value="medicine"
+            checked={formData.tags.includes('medicine')}
+            onChange={handleTagChange}
+          />
+           Medicine
+        </label><br />
+        <label>
+          <input
+            type="checkbox"
+            name="tags"
+            value="finance"
+            checked={formData.tags.includes('finance')}
+            onChange={handleTagChange}
+          />
+           Finance
+        </label><br />
+        <label>
+          <input
+            type="checkbox"
+            name="tags"
+            value="engineering"
+            checked={formData.tags.includes('engineering')}
+            onChange={handleTagChange}
+          />
+           Engineering
+        </label><br />
+        <label>
+          <input
+            type="checkbox"
+            name="tags"
+            value="other"
+            checked={formData.tags.includes('other')}
+            onChange={handleTagChange}
+          />
+           Other
+        </label><br /><br />
+
     
             <input className = "submit-button" type="submit" value="Save" />
           </form>
