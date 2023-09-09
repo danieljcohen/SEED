@@ -1,7 +1,6 @@
-import React, { useState, Link } from 'react';
-import SignIn from './SignIn';
+import React, { useState } from 'react';
 
-export const Register = (props) => {
+function Register({ onFormSwitch }) {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
@@ -10,6 +9,12 @@ export const Register = (props) => {
         e.preventDefault();
         console.log(email);
     }
+
+    const switchToSignIn = () => {
+        onFormSwitch('SignIn');
+    }
+
+
 
     return (
         <div className="auth-form-container">
@@ -23,7 +28,7 @@ export const Register = (props) => {
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
             <button type="submit">Log In</button>
         </form>
-        <p>Already have an account? <Link to="/login">Login</Link></p>
+        <p>Already have an account? <button onClick={switchToSignIn}>Sign In</button></p>
     </div>
     );
 }
