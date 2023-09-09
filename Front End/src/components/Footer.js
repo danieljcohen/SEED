@@ -12,27 +12,10 @@ function Footer() {
     return (
         <div className='footer-container'>
             <section className='footer-logo-copy'>
-                <img className='logo-footer' src="/placeholder-contact-us.jpg" />
                 <p className ='copy'>
                     SEED
                 </p>
             </section>
-                <div class='footer-links'>
-                    <div class='footer-link-items'>
-                        <Link to="/about" style={{ textDecoration: 'none' }}>
-                            <p className='terms-priv'>TERMS OF USE & DISCLAIMERS</p>
-                        </Link>
-                    </div>
-                    <div class='footer-link-items'>
-                        <Link to="/about" style={{ textDecoration: 'none' }}>
-                            <p className='terms-priv'>PRIVACY POLICY</p>
-                        </Link>
-                    </div>
-                </div>
-                <div className="logos">
-                    <img className='linkedin' src="/placeholder-contact-us.jpg" alt="link to Email"/>
-                    <img className='email' src="/email.jpeg" alt="link to Email"/>   
-                </div>
         </div>
     );
 }
