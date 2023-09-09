@@ -32,8 +32,6 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Adjust the max-width as needed */
-    padding: 0 0px;
   }
   
   .navbar-logo {
@@ -49,11 +47,11 @@ body{
   
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(7, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 60vw;
+    width: 100vw;
     justify-content: end;
     margin-right: 0;
   }
