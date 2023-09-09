@@ -8,6 +8,9 @@ import Profile from './components/pages/Profile';
 import OurPeoplePage from './components/pages/OurPeoplePage';
 import Investments from './components/pages/Investments';
 import LogIn from './components/pages/LogIn';
+import Register from './components/pages/Register';
+
+
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Outlet} from 'react-router-dom';
 import AboutPage from './components/pages/AboutPage';
@@ -28,6 +31,7 @@ function App() {
           <Route path='/Profile' element = {<Profile/>} />
           <Route path='/investments' element = {<Investments/>} />
           <Route path='/LogIn' element = {<LogIn/>} />
+          <Route path='/Register' element = {<Register/>} />
 
         </Routes>
       </div> 
