@@ -10,6 +10,7 @@ function ProfilePage() {
     website: '',
     fundingAmount: '',
     equityOffered: '',
+    Location: '',
     companyImage: null // Added for company image
   });
 
@@ -61,7 +62,7 @@ function ProfilePage() {
         <h1 className='form-gap'>Profile</h1>
         <div className='forms'>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="companyName">Company Name:</label>
+            <label htmlFor="companyName">Company Name: </label>
             <input
               type="text"
               id="companyName"
@@ -70,8 +71,8 @@ function ProfilePage() {
               onChange={handleChange}
               required
             /><br /><br />
-    
-            <label htmlFor="bio">Short Bio:</label><br />
+
+            <label htmlFor="bio">Short Bio: </label><br />
             <textarea
               id="bio"
               name="bio"
@@ -79,8 +80,18 @@ function ProfilePage() {
               onChange={handleChange}
               required
             ></textarea><br /><br />
-    
-            <label htmlFor="website">Company Website:</label>
+
+            <label htmlFor="Location">Location: </label>
+            <input
+              type="text"
+              id="Location"
+              name="Location"
+              value={formData.Location}
+              onChange={handleChange}
+              required
+            /><br /><br />
+
+            <label htmlFor="website">Company Website Link: </label>
             <input
               type="url"
               id="website"
@@ -90,7 +101,7 @@ function ProfilePage() {
               required
             /><br /><br />
     
-            <label htmlFor="fundingAmount">Funding Amount (USD):</label>
+            <label htmlFor="fundingAmount">Funding Amount (USD): </label>
             <input
               type="number"
               id="fundingAmount"
@@ -100,7 +111,7 @@ function ProfilePage() {
               required
             /><br /><br />
     
-            <label htmlFor="equityOffered">Equity Offered (%):</label>
+            <label htmlFor="equityOffered">Equity Offered (%): </label>
             <input
               type="number"
               id="equityOffered"
@@ -110,7 +121,7 @@ function ProfilePage() {
               required
             /><br /><br />
 
-            <label htmlFor="companyImage">Company Image:</label>
+            <label htmlFor="companyImage">Company Image: </label>
             <input
               type="file"
               id="companyImage"
