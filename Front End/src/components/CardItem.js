@@ -9,7 +9,7 @@ export default function CardItem(props){
     logo: image of the logo
     bio: company bio
     equity: percent for price
-
+    */
 
 export default function Card(props){
     return(

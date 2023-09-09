@@ -69,7 +69,7 @@ function NavBar() {
                         <li className='nav-item'>
                             <div className={splitLocation[1] === "our-people" ? "nav-underline-current" : "nav-underline"}>
                                 <NavLink to = '/our-people' className='nav-links' onClick={closeMobileMenu}>
-                                    OUR PEOPLE
+                                    OUR INVESTORS
                                 </NavLink>
                             </div>
                         </li>
