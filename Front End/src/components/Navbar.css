@@ -36,7 +36,6 @@ body{
   
   .navbar-logo {
     color: var(--r1649Green);
-    justify-self: start;
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
@@ -52,8 +51,7 @@ body{
     list-style: none;
     text-align: center;
     width: 100vw;
-    justify-content: end;
-    margin-right: 0;
+    justify-content: right;
   }
 
   .login{
