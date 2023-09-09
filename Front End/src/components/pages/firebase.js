@@ -56,41 +56,14 @@ export async function addCompanyProfile(
         Location: Location,
         Image: url,
         tags: tags
-<<<<<<< HEAD
     });
 }
+
 export function getCurrentUser() {
     return auth.currentUser;
   }
+
   
-=======
-      });
-  
-      console.log("Company profile added successfully");
-    } catch (error) {
-      console.error("Error adding company profile:", error);
-    }
-  }
-  
-  async function addImgUrl(file, companyName) {
-    const storage = getStorage();
-    const imageRef = storageRef(storage, `Images/${companyName}/${file.name}`);
-  
-    // Upload the image file to Firebase Storage
-    await uploadBytes(imageRef, file);
-    return imageRef;
-  }
-  
-  async function getUrl(ref) {
-    try {
-      const url = await getDownloadURL(ref);
-      return url;
-    } catch (error) {
-      console.error("Error getting download URL:", error);
-      throw error;
-    }
-  }
->>>>>>> 110391995e9536b3b304ccc8fda00534e4f9790f
 
 export {auth, createUserWithEmailAndPassword, signInWithEmailAndPassword};  // Add `auth` here
 
