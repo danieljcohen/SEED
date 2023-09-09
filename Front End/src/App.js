@@ -13,6 +13,7 @@ import SignIn from './components/pages/SignIn';
 
 
 
+import { useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Outlet} from 'react-router-dom';
 import AboutPage from './components/pages/AboutPage';
