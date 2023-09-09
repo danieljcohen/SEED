@@ -1,19 +1,14 @@
 import { React, useEffect } from 'react';
 import './Homepage.css';
 import {Link} from 'react-router-dom';
+import Cards from "../Cards.js"
 
 
 function Homepage() {
-    useEffect(() => {
-        document.title = "R1649";  
-    }, []);
-
     return (
-        <>
-            <div className="Homepage-container">
-                
-            </div>
-        </>
+        <div>
+            <Cards />
+        </div>
     );
 }
 
