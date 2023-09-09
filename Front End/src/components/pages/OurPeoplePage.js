@@ -9,15 +9,8 @@ function OurPeoplePage() {
 
     return (
         <div className="page-container">
-                <h1 className="page-header">GLOBALLY INTEGRATED FOR SUCCESS</h1>
-                <p className="page-text">
-                    The leadership of Lincoln International includes the original founders and a team of professionals who oversee the strategy and performance of the firm globally. Lincoln’s leaders are stewards of our culture and developers of talent, assuring that what clients value most about our offerings and our people endure for years to come.
-                </p>
-                <p className="page-text">
-                    The information we gather and share through our full immersion approach is leveraged through the cohesive and collaborative approach of our exceptional team. In addition to the cast experience of our investment team, Tailwater has a unique ecosystem for creating value throughout our core sectors of focus.
-                </p>
                 {/* <section className='team'> */}
-                    <h1 className='page-header'>OUR TEAM</h1>
+                    <h1 className='page-header'>OUR INVESTORS</h1>
                     <div className='our-people-row' >
                         <div className='person'>
                             <Link to='http://google.com' target='_blank'>
@@ -26,8 +19,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 1<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                         <div className='person'>
@@ -37,8 +30,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 2<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                         <div className='person'>
@@ -48,8 +41,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 3<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                         <div className='person'>
@@ -59,8 +52,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 4<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                     </div>
@@ -72,8 +65,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 5<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                         <div className='person'>
@@ -83,8 +76,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 6<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                         <div className='person'>
@@ -94,8 +87,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 7<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                         <div className='person'>
@@ -105,8 +98,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 8<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                     </div>
@@ -118,8 +111,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 9<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                         <div className='person'>
@@ -129,8 +122,8 @@ function OurPeoplePage() {
                                 </div>
                             </Link>
                             <h3 className='our-people-card-text'>
-                                JAY DAVE<br/>
-                                FOUNDER & CEO
+                                INVESTOR 10<br/>
+                                EXPERTISE
                             </h3>
                         </div>
                     </div>
