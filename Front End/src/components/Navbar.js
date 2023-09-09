@@ -28,7 +28,7 @@ function NavBar() {
     const { pathname, hash, key } = location;
 
     const splitLocation = pathname.split("/");
-    console.log(splitLocation)
+    //console.log(splitLocation)
 
     
     useEffect(() => {

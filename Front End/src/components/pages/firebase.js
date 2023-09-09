@@ -3,8 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
 import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
-
-import { getDatabase, ref as dbRef, set, onValue } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+import { getDatabase, ref as dbRef, set, child, get} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
 import {getStorage, ref as storageRef, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,7 +21,7 @@ const firebaseConfig = {
     databaseURL: "https://hackathon-82a7f-default-rtdb.firebaseio.com/"
 };
 
-console.log("test");
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -30,7 +29,7 @@ const auth = getAuth(app);
 const db = getDatabase();
 
 
-async function addCompanyProfile(
+export async function addCompanyProfile(
     companyName,
     bio,
     website,
@@ -63,7 +62,7 @@ async function addCompanyProfile(
       console.error("Error adding company profile:", error);
     }
   }
-  export {addCompanyProfile}
+
   
   async function addImgUrl(file, companyName) {
     const storage = getStorage();
@@ -84,16 +83,25 @@ async function addCompanyProfile(
     }
   }
   
+export default function getSnapshot() {
+  console.log("snapshot function ran");
+    const db = getDatabase();
+    const root = dbRef(db);
 
+    get(child(root, 'companies')).then((snapshot) => {
+      if(snapshot.exists()) {
+        console.log(snapshot.val());
+        return snapshot.val();
+      }
+      else {
+        console.log("no data")
+      }
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
   
 
-let dbData = null;
-const newCompany = dbRef(db, 'companies');
-onValue(newCompany, (snapshot) => {
-    const dbData = snapshot.val();
-    console.log(dbData);
-    
-});
-export default dbData;
+//export default dbData;
 
 
