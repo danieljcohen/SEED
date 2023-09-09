@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+:root {
+  --r1649Green: rgb(3, 73, 49);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 180px;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.page-container {
+  margin: 0%;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+}
+
+.page-text {
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,27 @@
+.media-button {
+    background-color:var(--r1649Green);
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 15px 32px;
+    border-radius: 4px;
+    border: 1px solid var(--r1649Green);
+    color: #fff;
+}
+
+button.media-button:hover {
+    background: #fff;
+    color: var(--r1649Green);
+    transition: 250ms;
+}
+
+.links-container {
+    position: relative;
+    color: #000;
+    text-align: left;
+    margin-top: 5%;
+}

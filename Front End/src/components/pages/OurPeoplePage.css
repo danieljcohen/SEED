@@ -1,0 +1,32 @@
+.img-wrapper {
+    padding-top: 5%;
+    width: 50%;
+    height: 30%;
+    max-height: 30%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.person-img {
+    height: 200%;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.person-img:hover {
+    transform: scale(1.5);
+}
+
+.our-people-row {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    column-gap: .005%;
+}
+
+.our-people-card-text {
+    text-align: left;
+    font-size: 1rem;
+    padding-left: 25%;
+    padding-top: 0%;
+}

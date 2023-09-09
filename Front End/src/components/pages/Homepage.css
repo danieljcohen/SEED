@@ -1,0 +1,74 @@
+video{
+    z-index: -1;
+    object-fit: fill;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    overflow-y: hidden;
+    width: 100vw;
+ }
+ .Homepage-container{
+    height: 100vh;
+    overflow-y: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   object-fit: fill;
+
+ }
+ body::-webkit-scrollbar{
+   display: none;
+ }
+
+ 
+
+
+ .info{
+    position: fixed;
+    color: #ffffff;
+    max-width: 780px;
+    font-size: 1.15rem;
+    font-family: serif;
+    line-height: 30pt;
+    padding-top: 25%;
+    padding-left: 10%;
+    font-weight: bold;
+ }
+ 
+.info-but{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    z-index: 1;
+
+}
+ .home-button{
+    padding-top: 50%;
+    padding-left: 10%;
+    position: fixed;
+
+ }
+
+ .button {
+    background-color:rgb(255, 255, 255);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+
+ }
+ .button:hover{
+    background-color:rgb(172, 175, 172);
+ }
+ .button-text{
+    color: var(--r1649Green);
+ }
+ 
+
+  

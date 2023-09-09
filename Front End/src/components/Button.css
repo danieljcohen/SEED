@@ -1,0 +1,41 @@
+:root {
+    --r1649Green: rgb(3, 73, 49);
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--r1649Green);
+    color: #242424;
+    border: 1px solid var(--r1649Green);
+}
+
+.btn--outline {
+    background-color: var(--r1649Green);
+    color: #fff;
+    padding: 8px 20px;
+    border: 1px solid var(--r1649Green);
+    transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+    padding: 8px 20px;
+    font-size: 20px;
+}
+
+.btn--large {
+    padding: 12px 26px;
+    font-size: 20px;
+}
+
+.btn--large:hover, .btn--medium:hover {
+    background-color: #fff;
+    color: var(--r1649Green);
+    transition: all 0.3s ease-out;
+}

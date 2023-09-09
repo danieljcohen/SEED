@@ -1,0 +1,15 @@
+.hero-container {
+    background: url('../../public/logo512.png');
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: contain;
+    text-decoration-line: none;
+}
+
+.media-title-text {
+    text-align: center;
+    padding: 100px;
+}

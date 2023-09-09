@@ -1,0 +1,17 @@
+
+.about-page-row {
+    margin-top: 10%;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    column-gap: 5px;
+}
+
+.about-page-row-text {
+    margin-top: 0%;
+}
+
+#who-we-are, #how-we-invest, #our-history {
+    scroll-margin-top: 180px;
+}
