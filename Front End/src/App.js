@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Profile from './components/pages/Profile';
 import OurPeoplePage from './components/pages/OurPeoplePage';
 import Investments from './components/pages/Investments';
+import LogIn from './components/pages/LogIn';
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Outlet} from 'react-router-dom';
 import AboutPage from './components/pages/AboutPage';
@@ -26,6 +27,7 @@ function App() {
           <Route path='/contact-us' element = {<ContactPage/>}/>
           <Route path='/Profile' element = {<Profile/>} />
           <Route path='/investments' element = {<Investments/>} />
+          <Route path='/LogIn' element = {<LogIn/>} />
 
         </Routes>
       </div> 

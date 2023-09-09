@@ -101,13 +101,14 @@ function NavBar() {
                                 </NavLink>
                             </div>
                         </li>
-                        <li className='nav-item'>
-                            <NavLink to = '/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                Sign Up
-                            </NavLink>
+                        <li className='login'>
+                            <div className={splitLocation[1] === "login" ? "nav-underline-current" : "nav-underline"}>
+                                <NavLink to = '/login' className='nav-links' onClick={closeMobileMenu}>
+                                    LOGIN / SIGNUP
+                                </NavLink>
+                            </div>
                         </li>
                     </ul>
-                    {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
                 </div>
             </nav>
         </>

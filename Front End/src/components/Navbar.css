@@ -45,6 +45,14 @@
     justify-content: end;
     margin-right: 2rem;
   }
+
+  .login{
+    background-color: var(--r1649Green);
+    color: #fff;
+    padding: 4px 8px;
+    border: .5px solid var(--r1649Green);
+    transition: all 0.3s ease-out;
+  }
   
   .nav-item {
     height: 80px;

@@ -14,7 +14,7 @@ function Footer() {
             <section className='footer-logo-copy'>
                 <img className='logo-footer' src="/placeholder-contact-us.jpg" />
                 <p className ='copy'>
-                    COPYRIGHT © 2023 R1649
+                    SEED
                 </p>
             </section>
                 <div class='footer-links'>
