@@ -9,8 +9,8 @@ function Homepage() {
         <div className="Homepage-container">
             <Cards />
             <div className="buttons">
-                <button>Previous Page</button>
-                <button>Next Page</button>
+                <button class="button">Previous Page</button>
+                <button class="button">Next Page</button>
             </div>
         </div>
     );
