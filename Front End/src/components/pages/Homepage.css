@@ -1,12 +1,4 @@
-video{
-    z-index: -1;
-    object-fit: fill;
-    position: fixed;
-    left: 0;
-    height: 100vh;
-    overflow-y: hidden;
-    width: 100vw;
- }
+
  .Homepage-container{
     height: 100vh;
     overflow-y: hidden;
