@@ -4,7 +4,7 @@ import NavBar from './components/Navbar';
 import Homepage from './components/pages/Homepage';
 import ContactPage from './components/pages/ContactPage';
 import Footer from './components/Footer';
-import Mediapage from './components/pages/Mediapage';
+import Profile from './components/pages/Profile';
 import OurPeoplePage from './components/pages/OurPeoplePage';
 import Investments from './components/pages/Investments';
 
@@ -24,7 +24,7 @@ function App() {
           <Route path='/about' element = {<AboutPage />} />
           <Route path='/our-people' element = {<OurPeoplePage />} />
           <Route path='/contact-us' element = {<ContactPage/>}/>
-          <Route path='/media' element = {<Mediapage/>} />
+          <Route path='/Profile' element = {<Profile/>} />
           <Route path='/investments' element = {<Investments/>} />
 
         </Routes>

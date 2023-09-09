@@ -88,9 +88,9 @@ function NavBar() {
                             </ul>
                         </li>
                         <li className='nav-item'>
-                            <div className={splitLocation[1] === "media" ? "nav-underline-current" : "nav-underline"}>
-                                <NavLink to = '/media' className='nav-links' onClick={closeMobileMenu}>
-                                    MEDIA
+                            <div className={splitLocation[1] === "Profile" ? "nav-underline-current" : "nav-underline"}>
+                                <NavLink to = '/Profile' className='nav-links' onClick={closeMobileMenu}>
+                                    PROFILE
                                 </NavLink>
                             </div>
                         </li>
