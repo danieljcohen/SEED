@@ -1,7 +1,7 @@
 .footer-container {
     background-color: var(--r1649Green);
     align-items: center;
-    max-width: 100%;
+    width: 100vw;
     height: 20vh;
     bottom: 0;
     position: relative;
