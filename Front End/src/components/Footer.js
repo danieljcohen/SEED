@@ -6,7 +6,7 @@ function Footer() {
     const location = useLocation()
 
     if(location.pathname === '/') {
-        return false;
+        return null;
     }
 
     return (

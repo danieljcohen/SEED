@@ -66,10 +66,7 @@ function ProfilePage() {
       Location: '',
       companyImage: null,
       tags: ''
-  });
-
-    
-    
+    });  
   };
   
     return (
