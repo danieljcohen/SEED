@@ -49,11 +49,6 @@ function Investments() {
                 </div>
                 <h1 className='page-header' id='portfolio-highlights'>PORTFOLIO HIGHLIGHTS</h1>
                 <div className="page-text">
-                    <p>
-                    Behind every investment there’s a story to be told. A story about investment themes and understanding market
-                    drivers and tailwinds, about ESG fundamentals and business track records, and about management teams and
-                    partnerships.
-                    </p>
                     <p className='story'>
                     These are some of our stories. We hope they provide some depth and color and give you a better sense of how we
                     operate at Seed.
