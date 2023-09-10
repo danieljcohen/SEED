@@ -17,7 +17,7 @@ export default function CardItem(props){
         <img src={props.logo} className="card_item_logo"></img>
         <p className="card_item_location">Location: {props.location}</p>
         <p className="card_item_bio">{props.bio}</p>
-        <h5 className="">Asking for {props.fundingAmount}% for {props.equityOffered}</h5>
+        <h5 className="">Asking for ${props.fundingAmount} for {props.equityOffered}%</h5>
     </div>
    )
 }
