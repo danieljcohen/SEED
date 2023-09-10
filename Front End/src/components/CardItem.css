@@ -14,15 +14,6 @@
     margin: 10px 0;
 }
 
-.location{
-    display: flex;
-    flex-direction: row;
-}
-
-#locationimg{
-    width: 10px;
-    height: 10px;
-}
 
 .card_item_logo {
     height: 25vh; /* Adjust the max-width of the logo as needed */

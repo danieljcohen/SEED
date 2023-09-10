@@ -54,6 +54,10 @@ body{
     justify-content: right;
   }
 
+  .txt{
+    color:#fff;
+  }
+  
   .login{
     background-color: var(--r1649Green);
     color: #fff;

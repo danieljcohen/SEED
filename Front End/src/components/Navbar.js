@@ -105,11 +105,11 @@ function NavBar() {
                             </div>
                         </li>
                             <li className='login'>
-                            <div className="login">
-                                <NavLink to='/login' onClick={closeMobileMenu}>
-                                <p className='text'>LOGIN / SIGNUP</p>
-                                </NavLink>
-                            </div>
+                                <div  style={{position: "relative", "transform": "translateY(-50%)", "top":"50%"}}>
+                                    <NavLink to='/login' onClick={closeMobileMenu} className = "txt">
+                                        LOGIN / SIGNUP
+                                    </NavLink>
+                                </div>
                             </li>
 
                     </ul>

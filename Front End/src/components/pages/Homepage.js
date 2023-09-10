@@ -12,8 +12,10 @@ function Homepage() {
     return (
         <div className = 'Wrappers'>
             <Cards />
-            <button>Previous Page</button>
-            <button>Next Page</button>
+            <div className='buttons'>
+                <button>Previous Page</button>
+                <button>Next Page</button>
+            </div>
         </div>
     );
 }
