@@ -50,7 +50,7 @@ export async function addCompanyProfile(
   
       const dbReference = dbRef(db, 'companies/' + companyName);
       await set(dbReference, {
-        companyName: companyName,
+        name: companyName,
         bio: bio,
         website: website,
         fundingAmount: fundingAmount,

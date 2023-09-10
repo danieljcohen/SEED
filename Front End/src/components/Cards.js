@@ -27,7 +27,7 @@ function Cards(){
     /* companyName, logo, location, bio, fundingAmount, equityOffered */
     const companies = dataFromDB.map((company) => (
       <CardItem
-        companyName={company.companyName}
+        name={company.name}
         logo={company.Image}
         location={company.Location}
         bio={company.bio}
