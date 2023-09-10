@@ -15,8 +15,8 @@
 }
 
 .card_item_logo {
-    max-width: 75%; /* Adjust the max-width of the logo as needed */
-    height: auto;
+    height: 25vh; /* Adjust the max-width of the logo as needed */
+    width: auto;
     border-radius: 20px;
 }
 
