@@ -14,7 +14,6 @@ import SignIn from './components/pages/SignIn';
 import getSnapshot from './components/pages/firebase'
 
 
-import { useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route, useLocation, Outlet} from 'react-router-dom';
 import AboutPage from './components/pages/AboutPage';
@@ -22,15 +21,14 @@ import AboutPage from './components/pages/AboutPage';
 
 
 function App() {
-  useEffect(() => {
-    const data = getSnapshot()
-  }, []); // The empty dependency array ensures this effect runs only once
+  
   return (
     <>
     <Router>
       <NavBar />
       <div className='body'>
         <Routes>
+          
           <Route path='/' element = {<Homepage/>} />
           <Route path='/about' element = {<AboutPage />} />
           <Route path='/our-people' element = {<OurPeoplePage />} />
