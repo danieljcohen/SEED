@@ -50,7 +50,6 @@ function ProfilePage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Send formData to the backend (you will need to implement this part)
     const formDataToSend = new FormData();
     Object.keys(formData).forEach(key => {
       formDataToSend.append(key, formData[key]);
@@ -195,7 +194,6 @@ function ProfilePage() {
            Other
         </label><br /><br />
 
-    
             <input className = "submit-button" type="submit" value="Submit" />
           </form>
         </div>

@@ -109,5 +109,3 @@ export async function addCompanyProfile(
   
 
 //export default dbData;
-
-
